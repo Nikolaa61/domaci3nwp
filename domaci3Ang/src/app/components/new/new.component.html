@@ -1,0 +1,44 @@
+<form [formGroup]="newForm" (submit)="dodaj()">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email </label>
+    <input [formControlName]="'email'" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+    <div class="error-message text-danger" *ngIf="newForm.get('email')?.errors?.['required']"> Email is required! </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Ime</label>
+    <input [formControlName]="'firstName'" type="text" class="form-control" id="exampleFormControlInput2" name="ime">
+    <div class="error-message text-danger" *ngIf="newForm.get('firstName')?.errors?.['required']"> First name is required! </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Prezime</label>
+    <input [formControlName]="'lastName'" type="text" class="form-control" id="exampleFormControlInput3" >
+    <div class="error-message text-danger" *ngIf="newForm.get('lastName')?.errors?.['required']"> Last name is required! </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Lozinka</label>
+    <input [formControlName]="'password'" type="password" class="form-control" id="exampleFormControlInput4" >
+    <div class="error-message text-danger" *ngIf="newForm.get('password')?.errors?.['required']"> Password is required! </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect1" [(ngModel)]="user.permisije" [ngModelOptions]="{standalone: true}" name="select">
+      <option>can_create_users</option>
+      <option>can_read_users</option>
+      <option>can_update_users</option>
+      <option>can_delete_users</option>
+    </select>
+    <br>
+    <button [disabled]="!newForm.valid" type="submit" class="btn btn-primary">Dodaj</button>
+    <br> <br>
+    <div class="error-message text-danger"> {{message}} </div>
+
+  </div>
+
+
+
+
+</form>

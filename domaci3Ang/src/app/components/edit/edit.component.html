@@ -1,0 +1,31 @@
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email </label>
+    <input [(ngModel)]="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Ime</label>
+    <input [(ngModel)]="ime" type="text" class="form-control" id="exampleFormControlInput2" name="ime">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Prezime</label>
+    <input [(ngModel)]="prezime" type="text" class="form-control" id="exampleFormControlInput3" name="prezime">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect1" [(ngModel)]="permisije" name="select">
+      <option>can_create_users</option>
+      <option>can_read_users</option>
+      <option>can_update_users</option>
+      <option>can_delete_users</option>
+    </select>
+    <h3>Trenutne permisije: {{permisije}}</h3>
+    <button type="button" class="btn btn-primary"(click)="promeni()">Promeni</button>
+  </div>
+
+
+
+
+</form>
